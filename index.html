@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mostafa Mohamed | AI & Machine Learning Intern</title>
+    <!-- Inter Font Collection for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- CSS VARIABLES & THEMING --- */
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --accent-color: #10b981; /* Tech Green accent color */
+        --accent-hover: #059669;
+        --border-color: #334155;
+        --max-width: 1000px;
+      }
+
+      /* --- GLOBAL RESETS --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+        padding: 0 1.5rem;
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      /* --- HEADER & NAVIGATION --- */
+      header {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.25rem;
+        letter-spacing: -0.05em;
+      }
+
+      .logo span {
+        color: var(--accent-color);
+      }
+
+      /* --- HERO SECTION --- */
+      #hero {
+        padding: 6rem 0 4rem 0;
+      }
+
+      .badge {
+        display: inline-block;
+        background-color: rgba(16, 185, 129, 0.1);
+        color: var(--accent-color);
+        padding: 0.35rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(16, 185, 129, 0.2);
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+
+      .tagline {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin-bottom: 2rem;
+      }
+
+      .cta-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+      }
+
+      .btn-primary {
+        background-color: var(--accent-color);
+        color: #000;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--accent-hover);
+      }
+
+      .btn-secondary {
+        border: 1px solid var(--border-color);
+        color: var(--text-main);
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: var(--text-muted);
+      }
+
+      /* --- SECTIONS COMMON --- */
+      section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      h2::after {
+        content: "";
+        height: 1px;
+        flex-grow: 1;
+        background-color: var(--border-color);
+      }
+
+      /* --- ABOUT SECTION --- */
+      .about-text {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        max-width: 800px;
+      }
+
+      /* --- SKILLS SECTION --- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .skills-category {
+        background-color: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--border-color);
+      }
+
+      .skills-category h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-main);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-main);
+        padding: 0.25rem 0.6rem;
+        border-radius: 0.25rem;
+        font-size: 0.85rem;
+      }
+
+      /* --- PROJECTS SECTION --- */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.2s ease;
+        padding-bottom: 2rem;
+      }
+
+      .project-card:hover {
+        border-color: var(--accent-color);
+      }
+
+      .project-body {
+        padding: 2rem;
+        flex-grow: 1;
+      }
+
+      .project-title {
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      .project-description {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .project-meta {
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.375rem;
+        font-size: 0.9rem;
+      }
+
+      .project-meta p {
+        margin-bottom: 0.25rem;
+      }
+
+      .project-meta p:last-child {
+        margin-bottom: 0;
+      }
+
+      .project-meta strong {
+        color: var(--accent-color);
+        font-weight: 500;
+      }
+
+      /* --- CONTACT SECTION --- */
+      .contact-wrapper {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-wrapper p {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        padding: 3rem 0;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* --- RESPONSIVE DESIGN --- */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.25rem;
+        }
+        #hero {
+          padding: 4rem 0 3rem 0;
+        }
+        section {
+          padding: 4rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- --- HEADER & NAVIGATION --- -->
+      <header>
+        <nav>
+          <div class="logo">MOSTAFA<span>.MED</span></div>
+          <div class="contact-links">
+            <a href="#projects" class="btn btn-secondary btn-sm">Projects</a>
+            <a href="#contact" class="btn btn-primary btn-sm">Contact Me</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- --- HERO SECTION --- -->
+      <section id="hero">
+        <div class="badge">Available for AI & ML Internships</div>
+        <h1>Mostafa Mohamed</h1>
+        <p class="tagline">
+          Third-year Computer Science student specializing in Artificial
+          Intelligence and Machine Learning, dedicated to building clean backend
+          workflows and robust algorithms.
+        </p>
+        <div class="cta-group">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#projects" class="btn btn-secondary">View My Work</a>
+        </div>
+      </section>
+
+      <!-- --- ABOUT SECTION --- -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p class="about-text">
+          I am a focused Computer Science student currently entering my third
+          year of studies. My core technical drive lies at the intersection of
+          logical software engineering and analytical intelligence. I enjoy
+          decomposing complex algorithmic logic and building structured
+          automation workflows that maintain strict efficiency, accuracy, and
+          rigorous logic.
+        </p>
+      </section>
+
+      <!-- --- SKILLS SECTION --- -->
+      <section id="skills">
+        <h2>Technical Stack</h2>
+        <div class="skills-grid">
+          <!-- Languages Category -->
+          <div class="skills-category">
+            <h3>Languages & Basics</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">C#</span>
+              <span class="tag">C++</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">Basic CSS</span>
+            </div>
+          </div>
+          <!-- Core Competencies Category -->
+          <div class="skills-category">
+            <h3>Specializations</h3>
+            <div class="tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Object-Oriented Programming (OOP)</span>
+              <span class="tag">Algorithmic Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --- PROJECTS SECTION --- -->
+      <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+          <!-- Project 1: Coffee Machine Simulator -->
+          <div class="project-card">
+            <div class="project-body">
+              <div class="project-title">
+                Object-Oriented Coffee Machine Simulator
+              </div>
+              <p class="project-description">
+                A fully comprehensive, object-oriented system that models
+                real-world hardware mechanisms, including component tracking,
+                recipe validation, automated financial processing, and state
+                reporting.
+              </p>
+              <div class="project-meta">
+                <p>
+                  <strong>Problem Solved:</strong> Transformed loose algorithmic
+                  processes into a rigorous, maintainable object-oriented
+                  workflow that properly handles continuous state modifications,
+                  currency conversions, and user constraints dynamically.
+                </p>
+                <p>
+                  <strong>Key Challenges:</strong> Mitigating state mutability
+                  errors during looped processes and constructing runtime
+                  validation loops to accurately calculate ingredient depletion
+                  before initializing global coin operations.
+                </p>
+                <p>
+                  <strong>Tech Stack:</strong> Python, OOP Principles,
+                  Functional Programming.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Interactive Higher-Lower Application -->
+          <div class="project-card">
+            <div class="project-body">
+              <div class="project-title">
+                Interactive Higher-Lower Logic Engine
+              </div>
+              <p class="project-description">
+                An advanced command-line interactive deployment designed to test
+                strict sequence logic, structural dictionary indexing, and
+                consistent conditional flow control paradigms based on target
+                metric evaluations.
+              </p>
+              <div class="project-meta">
+                <p>
+                  <strong>Problem Solved:</strong> Developed an algorithmic
+                  workflow executing persistent score updates and flawless state
+                  migration between dynamic database entries without disrupting
+                  runtime continuity.
+                </p>
+                <p>
+                  <strong>Key Challenges:</strong> Implementing defensive
+                  handling to sanitize diverse terminal user entries and
+                  managing efficient comparative queries inside highly nested
+                  datasets.
+                </p>
+                <p>
+                  <strong>Tech Stack:</strong> Python, Data Serialization, Flow
+                  Control Architecture.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --- CONTACT SECTION --- -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-wrapper">
+          <p>
+            I am looking forward to connecting with technical leaders, global
+            mentors, and companies building the future of intelligent
+            infrastructure. Let's start a conversation.
+          </p>
+          <div class="contact-links">
+            <a
+              href="https://www.linkedin.com/in/mohab-mohamed-977488344"
+              target="_blank"
+              class="btn btn-primary"
+              >LinkedIn Profile</a
+            >
+            <a href="mailto:hopamohamed768@gmail.com" class="btn btn-secondary"
+              >Email Me</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- --- FOOTER --- -->
+      <footer>
+        <div class="container">
+          <p>
+            &copy; 2026 Mostafa Mohamed. Built efficiently as a single
+            self-contained document.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
